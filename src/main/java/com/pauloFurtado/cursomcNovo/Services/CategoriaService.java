@@ -3,6 +3,7 @@ package com.pauloFurtado.cursomcNovo.Services;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import com.pauloFurtado.cursomcNovo.Exceptions.ObjectNotFoundException;
@@ -20,7 +21,7 @@ public class CategoriaService {
 			throw new ObjectNotFoundException("Objeto não encontrado! id: " + id
 					+ ", Tipo: " + Categoria.class.getName());
 		}
-		return Optional.ofNullable(obj.orElseThrow());
+		return Optional.of(obj.orElseThrow());
 
 	}
 
